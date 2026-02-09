@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agentic Prompt Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">Agentic Prompt Orchestration Lab</p>
+      <h1>Elite Prompt Generator with Cross-LLM Validation</h1>
+      <p>
+        Generate battle-tested prompts using bidirectional critique between ChatGPT Free and Gemini Pro.
+        Track convergence, compare outputs, and audit every change.
+      </p>
+    </div>
+    <div class="hero-card">
+      <h2>Orchestration State</h2>
+      <div class="state-grid">
+        <div>
+          <span class="label">user_intent</span>
+          <div id="state-intent" class="value">Waiting for input</div>
+        </div>
+        <div>
+          <span class="label">iteration_count</span>
+          <div id="state-iterations" class="value">0</div>
+        </div>
+        <div>
+          <span class="label">agent_feedback</span>
+          <div id="state-feedback" class="value">None</div>
+        </div>
+        <div>
+          <span class="label">convergence_score</span>
+          <div id="state-convergence" class="value">0%</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>User Intake</h2>
+      <form id="prompt-form">
+        <div class="grid two">
+          <label>
+            Purpose / goal
+            <textarea id="purpose" required placeholder="Describe the objective for the prompt."></textarea>
+          </label>
+          <label>
+            Desired output format / rough draft
+            <textarea id="format" required placeholder="Describe the ideal output format or paste a rough draft."></textarea>
+          </label>
+          <label>
+            Domain (optional)
+            <input id="domain" type="text" placeholder="Any" />
+          </label>
+          <label>
+            Constraints (tone, length, audience, risks)
+            <textarea id="constraints" placeholder="Concise, expert tone, <= 400 words, avoid speculation..."></textarea>
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" class="primary">Run Agentic Orchestration</button>
+          <button type="button" id="run-example">Load Example</button>
+          <button type="button" id="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>High-Level System Architecture</h2>
+      <pre class="diagram" id="architecture"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Agent Logic & Prompt Templates</h2>
+      <div class="grid two" id="templates"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Core Orchestration Algorithm</h2>
+      <pre class="diagram" id="algorithm"></pre>
+    </section>
+
+    <section class="panel">
+      <h2>Frontend Flow (Screens & Interactions)</h2>
+      <ol id="frontend-flow" class="flow"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>Agentic Iterations</h2>
+      <div id="iterations" class="iterations"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Side-by-Side Comparison</h2>
+      <div class="comparison">
+        <div>
+          <h3>Agent A (ChatGPT Free)</h3>
+          <pre id="compare-a"></pre>
+        </div>
+        <div>
+          <h3>Agent B (Gemini Pro)</h3>
+          <pre id="compare-b"></pre>
+        </div>
+      </div>
+      <h3>Highlighted Diff (A → B)</h3>
+      <div id="diff" class="diff"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Final Output</h2>
+      <div class="final-grid">
+        <article>
+          <h3>✅ Final Optimized Prompt</h3>
+          <pre id="final-prompt"></pre>
+        </article>
+        <article>
+          <h3>🧩 Change Log</h3>
+          <div id="change-log" class="stack"></div>
+        </article>
+        <article>
+          <h3>🧠 Rationale for Each Major Modification</h3>
+          <div id="rationale" class="stack"></div>
+        </article>
+        <article>
+          <h3>⚠️ Remaining Risks / Ambiguities</h3>
+          <ul id="risks" class="stack"></ul>
+        </article>
+        <article>
+          <h3>🎯 Recommended Usage Tips</h3>
+          <ul id="tips" class="stack"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Example Run</h2>
+      <div id="example-run" class="example"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for prompt engineers, researchers, and LLM product leaders.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
